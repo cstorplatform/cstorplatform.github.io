@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+		<link type="image/x-icon" rel="icon" href="img/favicon.ico" />
+		<title>欢迎-云创大数据平台部</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/echarts-china.js"></script>
+		<script type="text/javascript" src="js/echarts-wordcloud.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<style type="text/css">
+			#fp-nav ul li .fp-tooltip {
+				color: #AAA
+			}
+			
+			#fp-nav ul li a span,
+			.fp-slidesNav ul li a span {
+				border-color: #AAA
+			}
+			
+			#fp-nav ul li a.active span,
+			.fp-slidesNav ul li a.active span {
+				background: #AAA
+			}
+			
+			.intro-group {
+				position: absolute;
+				width: 320px;
+				left: 50%;
+				margin-left: -160px;
+				height: 360px;
+				top: 50%;
+				margin-top: -180px;
+			}
+			
+			.intro-group .panel .panel-heading {
+				font-weight: 600;
+			}
+			
+			@media only screen and (min-width: 768px) {
+				.intro-group {
+					width: 600px;
+					margin-left: -300px;
+					height: 520px;
+					margin-top: -260px;
+				}
+			}
+			
+			@media only screen and (min-width: 960px) {
+				.intro-group {
+					width: 900px;
+					margin-left: -450px;
+					height: 360px;
+					margin-top: -180px;
+				}
+			}
+			
+			@media only screen and (min-width: 1200px) {
+				.intro-group {
+					width: 1120px;
+					margin-left: -560px;
+					height: 400px;
+					margin-top: -200px;
+				}
+				.intro-group p {
+					font-size: 14px;
+				}
+			}
+			
+			.platform-chart {
+				height: 100%;
+			}
+			
+			@media only screen and (min-width: 1400px) {
+				#about-ctx {
+					padding-top: 5%;
+				}
+			}
+			
+			#about-ctx h1 small {
+				color: #d3d3d3;
+			}
+			
+			#about-ctx .thumbnail {
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+			
+			#about-ctx .caption h5.about-name {
+				margin: 0;
+			}
+			
+			@media only screen and (min-width: 768px) {
+				#about-ctx .caption h5.about-name {
+					font-size: 24px;
+					margin: 10px 0;
+				}
+			}
+			
+			#about-ctx .caption p {
+				margin-bottom: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="fullpage" class="main-bg">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+						<a class="navbar-brand" href="#">云创平台部</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">首页</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="http://www.wanwuyun.com" target="_blank">万物云</a>
+									</li>
+									<li>
+										<a href="http://www.envicloud.cn" target="_blank">环境云</a>
+									</li>
+									<li>
+										<a href="https://bd.cstor.cn" target="_blank">大数据实验平台</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="login.html">登录</a>
+							</li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<div class="section section1">
+				<div class="container intro-group">
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading">万物云</div>
+							<div class="panel-body">
+								<img class="hidden-xs hidden-sm img-responsive img-centered thumbnail" src="img/intro_wwy.jpg" alt="万物云" />
+								<p class="text-primary">提供物联网设备数据托管和查询服务</p>
+							</div>
+							<div class="hidden-xs panel-footer">
+								<a class="btn btn-primary btn-sm" href="http://www.wanwuyun.com" target="_blank">Learn More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading">环境云</div>
+							<div class="panel-body">
+								<img class="hidden-xs hidden-sm img-responsive img-centered thumbnail" src="img/intro_env.jpg" alt="环境云" />
+								<p class="text-primary">提供环境数据接口服务和实况展示</p>
+							</div>
+							<div class="hidden-xs panel-footer">
+								<a class="btn btn-primary btn-sm" href="http://www.envicloud.cn" target="_blank">Learn More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading">大数据实验平台</div>
+							<div class="panel-body">
+								<img class="hidden-xs hidden-sm img-responsive img-centered thumbnail" src="img/intro_lab.jpg" alt="大数据实验平台" />
+								<p class="text-primary">提供大数据基础实验环境和指导</p>
+							</div>
+							<div class="hidden-xs panel-footer">
+								<a class="btn btn-primary btn-sm" href="https://bd.cstor.cn" target="_blank">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section section2">
+				<div id="skillChart" class="container-fluid platform-chart"></div>
+			</div>
+			<div class="section section3">
+				<div id="roadMap" class="container-fluid platform-chart"></div>
+			</div>
+			<div class="section section4">
+				<div id="about-ctx" class="container">
+					<h1 class="text-center">关于我们<small class="hidden-xs">&nbsp;在追梦的路上，我们永不止步</small></h1>
+					<div class="row">
+						<div class="col-xs-3 col-md-2 col-md-offset-1">
+							<div class="thumbnail">
+								<img src="img/team/01.jpg" alt="沈大为">
+								<div class="caption">
+									<h5 class="about-name">沈大为</h5>
+									<p class="hidden-xs">外交官</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/02.jpg" alt="戎新堃">
+								<div class="caption">
+									<h5 class="about-name">戎新堃</h5>
+									<p class="hidden-xs">专职辅助</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/03.jpg" alt="谢超">
+								<div class="caption">
+									<h5 class="about-name">谢超</h5>
+									<p class="hidden-xs">Linux砖家</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/04.jpg" alt="苏泽月">
+								<div class="caption">
+									<h5 class="about-name">苏泽月</h5>
+									<p class="hidden-xs">攻关大师</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/05.jpg" alt="董广明">
+								<div class="caption">
+									<h5 class="about-name">董广明</h5>
+									<p class="hidden-xs">戏精</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2 col-md-offset-1">
+							<div class="thumbnail">
+								<img src="img/team/06.jpg" alt="张超">
+								<div class="caption">
+									<h5 class="about-name">张超</h5>
+									<p class="hidden-xs">专业前端</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/07.jpg" alt="胡佳佳">
+								<div class="caption">
+									<h5 class="about-name">胡佳佳</h5>
+									<p class="hidden-xs">身家几个亿</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/08.jpg" alt="陶中元">
+								<div class="caption">
+									<h5 class="about-name">陶中元</h5>
+									<p class="hidden-xs">身家也有几个亿</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/09.jpg" alt="卞堡垒">
+								<div class="caption">
+									<h5 class="about-name">卞堡垒</h5>
+									<p class="hidden-xs">架构师</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-2">
+							<div class="thumbnail">
+								<img src="img/team/10.jpg" alt="周俊兴">
+								<div class="caption">
+									<h5 class="about-name">周俊兴</h5>
+									<p class="hidden-xs">挖掘，我不停歇</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					<p>&copy; 2016-<span id="curyear"></span> 南京云创大数据科技股份有限公司</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var geoCoordMap = {
+			'海门': [121.15, 31.89],
+			'鄂尔多斯': [109.781327, 39.608266],
+			'招远': [120.38, 37.35],
+			'舟山': [122.207216, 29.985295],
+			'齐齐哈尔': [123.97, 47.33],
+			'盐城': [120.13, 33.38],
+			'赤峰': [118.87, 42.28],
+			'青岛': [120.33, 36.07],
+			'乳山': [121.52, 36.89],
+			'金昌': [102.188043, 38.520089],
+			'泉州': [118.58, 24.93],
+			'莱西': [120.53, 36.86],
+			'日照': [119.46, 35.42],
+			'胶南': [119.97, 35.88],
+			'南通': [121.05, 32.08],
+			'拉萨': [91.11, 29.97],
+			'云浮': [112.02, 22.93],
+			'梅州': [116.1, 24.55],
+			'文登': [122.05, 37.2],
+			'上海': [121.48, 31.22],
+			'攀枝花': [101.718637, 26.582347],
+			'威海': [122.1, 37.5],
+			'承德': [117.93, 40.97],
+			'厦门': [118.1, 24.46],
+			'汕尾': [115.375279, 22.786211],
+			'潮州': [116.63, 23.68],
+			'丹东': [124.37, 40.13],
+			'太仓': [121.1, 31.45],
+			'曲靖': [103.79, 25.51],
+			'烟台': [121.39, 37.52],
+			'福州': [119.3, 26.08],
+			'瓦房店': [121.979603, 39.627114],
+			'即墨': [120.45, 36.38],
+			'抚顺': [123.97, 41.97],
+			'玉溪': [102.52, 24.35],
+			'张家口': [114.87, 40.82],
+			'阳泉': [113.57, 37.85],
+			'莱州': [119.942327, 37.177017],
+			'湖州': [120.1, 30.86],
+			'汕头': [116.69, 23.39],
+			'昆山': [120.95, 31.39],
+			'宁波': [121.56, 29.86],
+			'湛江': [110.359377, 21.270708],
+			'揭阳': [116.35, 23.55],
+			'荣成': [122.41, 37.16],
+			'连云港': [119.16, 34.59],
+			'葫芦岛': [120.836932, 40.711052],
+			'常熟': [120.74, 31.64],
+			'东莞': [113.75, 23.04],
+			'河源': [114.68, 23.73],
+			'淮安': [119.15, 33.5],
+			'泰州': [119.9, 32.49],
+			'南宁': [108.33, 22.84],
+			'营口': [122.18, 40.65],
+			'惠州': [114.4, 23.09],
+			'江阴': [120.26, 31.91],
+			'蓬莱': [120.75, 37.8],
+			'韶关': [113.62, 24.84],
+			'嘉峪关': [98.289152, 39.77313],
+			'广州': [113.23, 23.16],
+			'延安': [109.47, 36.6],
+			'太原': [112.53, 37.87],
+			'清远': [113.01, 23.7],
+			'中山': [113.38, 22.52],
+			'昆明': [102.73, 25.04],
+			'寿光': [118.73, 36.86],
+			'盘锦': [122.070714, 41.119997],
+			'长治': [113.08, 36.18],
+			'深圳': [114.07, 22.62],
+			'珠海': [113.52, 22.3],
+			'宿迁': [118.3, 33.96],
+			'咸阳': [108.72, 34.36],
+			'铜川': [109.11, 35.09],
+			'平度': [119.97, 36.77],
+			'佛山': [113.11, 23.05],
+			'海口': [110.35, 20.02],
+			'江门': [113.06, 22.61],
+			'章丘': [117.53, 36.72],
+			'肇庆': [112.44, 23.05],
+			'大连': [121.62, 38.92],
+			'临汾': [111.5, 36.08],
+			'吴江': [120.63, 31.16],
+			'石嘴山': [106.39, 39.04],
+			'沈阳': [123.38, 41.8],
+			'苏州': [120.62, 31.32],
+			'茂名': [110.88, 21.68],
+			'嘉兴': [120.76, 30.77],
+			'长春': [125.35, 43.88],
+			'胶州': [120.03336, 36.264622],
+			'银川': [106.27, 38.47],
+			'张家港': [120.555821, 31.875428],
+			'三门峡': [111.19, 34.76],
+			'锦州': [121.15, 41.13],
+			'南昌': [115.89, 28.68],
+			'柳州': [109.4, 24.33],
+			'三亚': [109.511909, 18.252847],
+			'自贡': [104.778442, 29.33903],
+			'吉林': [126.57, 43.87],
+			'阳江': [111.95, 21.85],
+			'泸州': [105.39, 28.91],
+			'西宁': [101.74, 36.56],
+			'宜宾': [104.56, 29.77],
+			'呼和浩特': [111.65, 40.82],
+			'成都': [104.06, 30.67],
+			'大同': [113.3, 40.12],
+			'镇江': [119.44, 32.2],
+			'桂林': [110.28, 25.29],
+			'张家界': [110.479191, 29.117096],
+			'宜兴': [119.82, 31.36],
+			'北海': [109.12, 21.49],
+			'西安': [108.95, 34.27],
+			'金坛': [119.56, 31.74],
+			'东营': [118.49, 37.46],
+			'牡丹江': [129.58, 44.6],
+			'遵义': [106.9, 27.7],
+			'绍兴': [120.58, 30.01],
+			'扬州': [119.42, 32.39],
+			'常州': [119.95, 31.79],
+			'潍坊': [119.1, 36.62],
+			'重庆': [106.54, 29.59],
+			'台州': [121.420757, 28.656386],
+			'南京': [118.78, 32.04],
+			'滨州': [118.03, 37.36],
+			'贵阳': [106.71, 26.57],
+			'无锡': [120.29, 31.59],
+			'本溪': [123.73, 41.3],
+			'克拉玛依': [84.77, 45.59],
+			'渭南': [109.5, 34.52],
+			'马鞍山': [118.48, 31.56],
+			'宝鸡': [107.15, 34.38],
+			'焦作': [113.21, 35.24],
+			'句容': [119.16, 31.95],
+			'北京': [116.46, 39.92],
+			'徐州': [117.2, 34.26],
+			'衡水': [115.72, 37.72],
+			'包头': [110, 40.58],
+			'绵阳': [104.73, 31.48],
+			'乌鲁木齐': [87.68, 43.77],
+			'枣庄': [117.57, 34.86],
+			'杭州': [120.19, 30.26],
+			'淄博': [118.05, 36.78],
+			'鞍山': [122.85, 41.12],
+			'溧阳': [119.48, 31.43],
+			'库尔勒': [86.06, 41.68],
+			'安阳': [114.35, 36.1],
+			'开封': [114.35, 34.79],
+			'济南': [117, 36.65],
+			'德阳': [104.37, 31.13],
+			'温州': [120.65, 28.01],
+			'九江': [115.97, 29.71],
+			'邯郸': [114.47, 36.6],
+			'临安': [119.72, 30.23],
+			'兰州': [103.73, 36.03],
+			'沧州': [116.83, 38.33],
+			'临沂': [118.35, 35.05],
+			'南充': [106.110698, 30.837793],
+			'天津': [117.2, 39.13],
+			'富阳': [119.95, 30.07],
+			'泰安': [117.13, 36.18],
+			'诸暨': [120.23, 29.71],
+			'郑州': [113.65, 34.76],
+			'哈尔滨': [126.63, 45.75],
+			'聊城': [115.97, 36.45],
+			'芜湖': [118.38, 31.33],
+			'唐山': [118.02, 39.63],
+			'平顶山': [113.29, 33.75],
+			'邢台': [114.48, 37.05],
+			'德州': [116.29, 37.45],
+			'济宁': [116.59, 35.38],
+			'荆州': [112.239741, 30.335165],
+			'宜昌': [111.3, 30.7],
+			'义乌': [120.06, 29.32],
+			'丽水': [119.92, 28.45],
+			'洛阳': [112.44, 34.7],
+			'秦皇岛': [119.57, 39.95],
+			'株洲': [113.16, 27.83],
+			'石家庄': [114.48, 38.03],
+			'莱芜': [117.67, 36.19],
+			'常德': [111.69, 29.05],
+			'保定': [115.48, 38.85],
+			'湘潭': [112.91, 27.87],
+			'金华': [119.64, 29.12],
+			'岳阳': [113.09, 29.37],
+			'长沙': [113, 28.21],
+			'衢州': [118.88, 28.97],
+			'廊坊': [116.7, 39.53],
+			'菏泽': [115.480656, 35.23375],
+			'合肥': [117.27, 31.86],
+			'武汉': [114.31, 30.52],
+			'大庆': [125.03, 46.58],
+			'喀什': [75.99, 39.46],
+			'莎车': [77.16, 38.26],
+			'信阳': [114.06, 32.13],
+			'淮南': [117.02, 32.66]
+		};
+
+		var NJData = [
+			[{
+				name: '南京'
+			}, {
+				name: '上海'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '信阳'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '合肥'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '常州'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '乌鲁木齐'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '北京'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '郑州'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '济南'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '深圳'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '呼和浩特'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '三亚'
+			}],
+			[{
+				name: '乌鲁木齐'
+			}, {
+				name: '喀什'
+			}],
+			[{
+				name: '喀什'
+			}, {
+				name: '莎车'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '广州'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '重庆'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '天津'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '无锡'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '成都'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '宁波'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '西安'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '兰州'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '石家庄'
+			}],
+			[{
+				name: '石家庄'
+			}, {
+				name: '邢台'
+			}],
+			[{
+				name: '邢台'
+			}, {
+				name: '郑州'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '淄博'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '淮南'
+			}],
+			[{
+				name: '南京'
+			}, {
+				name: '句容'
+			}],
+		];
+
+		var convertData = function(data) {
+			var res = [];
+			for(var i = 0; i < data.length; i++) {
+				var dataItem = data[i];
+				var fromCoord = geoCoordMap[dataItem[0].name];
+				var toCoord = geoCoordMap[dataItem[1].name];
+				if(fromCoord && toCoord) {
+					res.push({
+						fromName: dataItem[0].name,
+						toName: dataItem[1].name,
+						coords: [fromCoord, toCoord]
+					});
+				}
+			}
+			return res;
+		};
+
+		var planePath = 'arrow';
+
+		/**
+		 * 初始化
+		 */
+		jQuery(function($) {
+			getCurYear();
+			$("#fullpage").fullpage({
+				verticalCentered: false,
+				anchors: ['welcome', 'skills', 'roads', 'about'],
+				css3: true,
+				sectionsColor: ['transparent', '#F0F2F4', '#0a1929', '#222'],
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['欢迎', '技能', '征途', '关于'],
+				navigation: true,
+				afterLoad: function(anchorLink, index) {
+					if(index == 2) {
+						showSkillChart();
+					}
+					if(index == 3) {
+						showRoadChart();
+					}
+				},
+				onLeave: function(index, direction) {
+					if(index == 2) {
+						cleanSkillChart();
+					}
+					if(index == 3) {
+						cleanRoadChart();
+					}
+				}
+			});
+
+		});
+
+		/**
+		 * 获取当前年份
+		 */
+		function getCurYear() {
+			var date = new Date();
+			$('#curyear').text(date.getFullYear());
+		}
+
+		/**
+		 * 在路线图上展示城市名称
+		 */
+		function formtVData(geoData, data, srcNam) {
+			var tGeoDt = [];
+			for(var i = 0; i < data.length; i++) {
+				for(var k = 0; k < data[i].length; k++) {
+					var tNam = data[i][k].name
+					if(srcNam != tNam) {
+						tGeoDt.push({
+							name: tNam,
+							value: geoData[tNam]
+						});
+					}
+				}
+			}
+			tGeoDt.push({
+				name: srcNam,
+				value: geoData[srcNam],
+				symbolSize: 8,
+				label: {
+					normal: {
+						fontWeight: 'bolder',
+						fontSize: 14
+					}
+				},
+				itemStyle: {
+					normal: {
+						color: '#e63428',
+						borderColor: '#000'
+					}
+				}
+			});
+			return tGeoDt;
+		}
+
+		/**
+		 * 销毁技能图表
+		 */
+		function cleanSkillChart() {
+			echarts.dispose(document.getElementById('skillChart'));
+		}
+
+		/**
+		 * 展示技能图表
+		 */
+		function showSkillChart() {
+			var chart = echarts.init(document.getElementById('skillChart'));
+
+			option = {
+				title: {
+					text: "做更好的平台，将平台做更好",
+					left: 'center',
+					top: '2%'
+				},
+				tooltip: {},
+				series: [{
+					type: 'wordCloud',
+					gridSize: 2,
+					sizeRange: [20, 50],
+					rotationRange: [-45, 45],
+					shape: 'smooth',
+					textStyle: {
+						normal: {
+							color: function() {
+								return 'rgb(' + [
+									Math.round(Math.random() * 160),
+									Math.round(Math.random() * 160),
+									Math.round(Math.random() * 160)
+								].join(',') + ')';
+							}
+						},
+						emphasis: {
+							shadowBlur: 10,
+							shadowColor: '#333'
+						}
+					},
+					data: [{
+						name: 'Python',
+						value: 4
+					}, {
+						name: 'Java',
+						value: 8
+					}, {
+						name: 'R语言',
+						value: 2
+					}, {
+						name: 'Go语言',
+						value: 2
+					}, {
+						name: 'Hadoop',
+						value: 8
+					}, {
+						name: 'HBase',
+						value: 3
+					}, {
+						name: 'Zookeeper',
+						value: 4
+					}, {
+						name: 'Kafka',
+						value: 3
+					}, {
+						name: 'MySQL',
+						value: 10
+					}, {
+						name: 'redis',
+						value: 5
+					}, {
+						name: 'springboot',
+						value: 4
+					}, {
+						name: 'ElasticSearch',
+						value: 1
+					}, {
+						name: 'Kubernetes',
+						value: 3
+					}, {
+						name: 'Docker',
+						value: 5
+					}, {
+						name: 'dubbo',
+						value: 2
+					}, {
+						name: 'netty',
+						value: 1
+					}, {
+						name: 'RESTful',
+						value: 6
+					}, {
+						name: '爬虫',
+						value: 3
+					}, {
+						name: 'jQuery',
+						value: 4
+					}, {
+						name: 'Bootstrap',
+						value: 6
+					}, {
+						name: 'vue.js',
+						value: 2
+					}, {
+						name: 'CSS3',
+						value: 6
+					}, {
+						name: 'HTML5',
+						value: 6
+					}, {
+						name: 'RPC',
+						value: 3
+					}, {
+						name: 'Caffe',
+						value: 2
+					}, {
+						name: 'Tensorflow',
+						value: 2
+					}, {
+						name: 'FreeMarker',
+						value: 1
+					}, {
+						name: '数据挖掘',
+						value: 1
+					}, {
+						name: 'Linux',
+						value: 5
+					}, {
+						name: 'OpenVPN',
+						value: 2
+					}, {
+						name: 'Openstack',
+						value: 2
+					}, {
+						name: 'Photoshop',
+						value: 2
+					}, {
+						name: 'HighCharts',
+						value: 2
+					}, {
+						name: 'ECharts',
+						value: 4
+					}]
+				}]
+			};
+
+			chart.setOption(option);
+
+			//监听窗口大小变更事件
+			window.onresize = function() {
+				if(null != chart) {
+					chart.resize();
+				}
+			}
+		}
+
+		/**
+		 * 销毁路线图表
+		 */
+		function cleanRoadChart() {
+			echarts.dispose(document.getElementById('roadMap'));
+		}
+
+		/**
+		 * 展示路线图表
+		 */
+		function showRoadChart() {
+			var chart = echarts.init(document.getElementById('roadMap'));
+
+			option = {
+				backgroundColor: 'transparent',
+				title: {
+					text: '我们的征途，是星辰大海',
+					left: 'center',
+					top: '15px',
+					textStyle: {
+						color: '#eee'
+					}
+				},
+				tooltip: {
+					formatter: function(param) {
+						return param.data.fromName + ' -- ' +
+							param.data.toName;
+					}
+				},
+				geo: {
+					map: 'china',
+					silent: true,
+					label: {
+						emphasis: {
+							show: false
+						}
+					},
+					itemStyle: {
+						normal: {
+							borderColor: '#1E90FF',
+							color: '#000080',
+							opacity: 0.1
+						}
+					},
+					roam: true,
+					zoom: 1.2,
+					scaleLimit: {
+						min: 1,
+						max: 5
+					}
+				},
+				series: [{
+						name: '2017',
+						type: 'lines',
+						coordinateSystem: 'geo',
+						large: true,
+						largeThreshold: 100,
+						effect: {
+							show: true,
+							period: 6,
+							trailLength: 0.1,
+							color: '#f7f7f7',
+							symbol: planePath,
+							symbolSize: 6
+						},
+						lineStyle: {
+							normal: {
+								color: '#ffa500',
+								opacity: 0.8,
+								width: 1.5,
+								curveness: 0.3
+							}
+						},
+						//blendMode: 'lighter',
+						data: convertData(NJData)
+					},
+					{
+
+						type: 'effectScatter',
+						coordinateSystem: 'geo',
+						zlevel: 2,
+						silent: true,
+						rippleEffect: {
+							period: 4,
+							scale: 2,
+							brushType: 'stroke'
+						},
+						label: {
+							normal: {
+								show: true,
+								position: 'right',
+								formatter: '{b}'
+							}
+						},
+						symbolSize: 4,
+						itemStyle: {
+							normal: {
+								color: '#d3d3d3',
+								borderColor: 'gold'
+							}
+						},
+
+						data: formtVData(geoCoordMap, NJData, '南京')
+					}
+				]
+			};
+
+			chart.setOption(option);
+
+			//监听窗口大小变更事件
+			window.onresize = function() {
+				if(null != chart) {
+					chart.resize();
+				}
+			}
+		}
+	</script>
+
+</html>

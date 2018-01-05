@@ -1,0 +1,8 @@
+﻿国云：
+    内网地址: 192.168.10.48
+    网址：g-cloud.gicp.net
+    账号：admin/guoyun
+坤前：
+    内网地址: 192.168.10.47
+    网址：globigdata.imwork.net
+    账号：admin/kunqian

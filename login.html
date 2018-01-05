@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+		<link type="image/x-icon" rel="icon" href="img/favicon.ico" />
+		<title>登录-云创大数据平台部</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-growl.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<style type="text/css">
+			.welcome-title {
+				position: absolute;
+				top: 15%;
+				width: 100%;
+				text-align: center;
+				font-weight: 600;
+			}
+			
+			@media only screen and (min-width: 768px) {
+				.welcome-title {
+					top: 20%;
+				}
+			}
+			
+			@media only screen and (min-width: 1400px) {
+				.welcome-title {
+					top: 30%;
+				}
+			}
+			
+			.access-portal {
+				position: absolute;
+				width: 280px;
+				left: 50%;
+				margin-left: -140px;
+				height: 120px;
+				top: 50%;
+				margin-top: -60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-bg">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+						<a class="navbar-brand" href="#">云创平台部</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="http://www.wanwuyun.com" target="_blank">万物云</a>
+									</li>
+									<li>
+										<a href="http://www.envicloud.cn" target="_blank">环境云</a>
+									</li>
+									<li>
+										<a href="https://bd.cstor.cn" target="_blank">大数据实验平台</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active">
+								<a href="#">登录</a>
+							</li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<div class="welcome-title">
+				<h2>云创大数据平台部</h2>
+				<h3>CSTOR PLATFORM DEPT</h3>
+			</div>
+			<div class="access-portal">
+				<form id="userlogin" class="form-signin">
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+							<i class="fa fa-user"></i>
+						</span>
+							<input id="login-username" class="form-control" type="text" placeholder="您的WES用户名" required="required" autofocus="autofocus">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+							<i class="fa fa-lock"></i>
+						</span>
+							<input id="login-password" class="form-control" type="password" placeholder="云创的股票代码是什么？" required="required" onkeydown="if (event.keyCode==13) login();">
+						</div>
+					</div>
+					<button id="submit" type="button" class="btn btn-block btn-primary" onclick="login()">登&nbsp;船</button>
+				</form>
+			</div>
+			<div class="footer">
+				<p>&copy; 2016-<span id="curyear"></span> 南京云创大数据科技股份有限公司</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var authenticatedusers = ['shendawei', 'rongxinkun', 'suzeyue', 'xiechao', 'dongguangming', 'zhangchao', 'hujiajia', 'taozhongyuan', 'zhoujunxing', 'bianbaolei', 'wangjun2', 'chenyuefei', 'yangjian', 'liulihong', 'liulianpeng', 'yefei', 'luomengyang', 'wuxiuwen', 'cixuefei', 'qianli', 'wuzhenghao', 'zhaoweipeng'];
+		jQuery(function($) {
+			getCurYear();
+		});
+
+		function getCurYear() {
+			var date = new Date();
+			$('#curyear').text(date.getFullYear());
+		}
+
+		function login() {
+			var username = $('#login-username').val();
+			var password = $('#login-password').val();
+			if('' == username) {
+				loginFail('Username not given!');
+				return;
+			}
+			if('' == password) {
+				loginFail('Password not given!');
+				return;
+			}
+			if('835305' != password.toString()) {
+				loginFail('Password incorrect!');
+				return;
+			}
+			for(var item in authenticatedusers) {
+				if(username == authenticatedusers[item]) {
+					window.location.href = 'captain.html?user=' + username;
+					return;
+				}
+			}
+			loginFail('Unauthenticated username!');
+		}
+
+		function loginFail(message) {
+			$.bootstrapGrowl(message, {
+				type: 'danger',
+				align: 'center',
+				width: 'auto',
+				delay: 3000,
+				allow_dismiss: false
+			});
+		}
+	</script>
+
+</html>

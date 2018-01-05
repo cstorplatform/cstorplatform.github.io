@@ -1,0 +1,5 @@
+公网地址：58.213.47.166:8990
+内网地址: 192.168.10.19
+管理员：admin/docker@123
+教师：teacher/docker@123
+学生：student/docker@123

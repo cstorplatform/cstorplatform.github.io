@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+		<link type="image/x-icon" rel="icon" href="img/favicon.ico" />
+		<title>主控室-云创大数据平台部</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<style type="text/css">
+			.doc-selection {
+				padding-top: 18%;
+			}
+			
+			.doc-selection .carousel-inner>.item {
+				height: 400px;
+			}
+			
+			.doc-selection .carousel-inner>.item .carousel-caption {
+				bottom: 30px;
+			}
+			
+			.doc-selection .carousel-inner>.item .carousel-caption button {
+				margin-bottom: 5px;
+			}
+			
+			@media only screen and (min-width: 768px) {
+				.doc-selection .carousel-inner>.item .carousel-caption {
+					bottom: 60px;
+				}
+			}
+			
+			@media only screen and (min-width:1200px) {
+				.doc-selection {
+					padding-top: 12%;
+				}
+				.doc-selection .carousel-inner>.item .carousel-caption {
+					bottom: 100px;
+				}
+			}
+			
+			@media only screen and (min-width:1400px) {
+				.doc-selection .carousel-inner>.item {
+					height: 500px;
+				}
+				.doc-selection .carousel-inner>.item .carousel-caption {
+					bottom: 150px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-bg">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+						<a class="navbar-brand" href="#">云创平台部</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<p class="navbar-text">欢迎，<span id="curuser"></span></p>
+							<li>
+								<a href="javascript:logout();">离开</a>
+							</li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<div class="doc-selection container">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="carousel-caption">
+								<h3>万物云</h3>
+								<p>包含万物云接口协议、日常维护等在内的资料</p>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">接口协议 <span class="badge">1</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/wwy/interface/data_service_protocols.pdf" target="_blank">智能硬件接入文档</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">日常维护 <span class="badge">1</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/wwy/maintenance/wwy-maintenance.docx" target="_blank">维护手册</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="carousel-caption">
+								<h3>环境云</h3>
+								<p>包含环境云使用帮助、网站部署等在内的资料</p>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">使用帮助 <span class="badge">1</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/env/guide/areaid.xlsx" target="_blank">城市编码表</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">日常维护 <span class="badge">1</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/env/maintenance/env-web-deploy.docx" target="_blank">网站部署</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="carousel-caption">
+								<h3>大数据实验平台</h3>
+								<p>包含大数据实验平台使用手册、项目投标和设计方案等在内的资料</p>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">使用手册 <span class="badge">3</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/lab/guide/admin-guide.pdf" target="_blank">管理员手册</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="files/lab/guide/teacher-guide.pdf" target="_blank">教师手册</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="files/lab/guide/student-guide.pdf" target="_blank">学生手册</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">项目投标 <span class="badge">4</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/lab/bidding/bdrack_params.doc" target="_blank">控标参数</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="files/lab/bidding/bdrack_demo.txt" target="_blank">演示环境</a>
+										</li>
+										<li>
+											<a href="files/lab/bidding/bdrack_partner.txt" target="_blank">陪标产品</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="files/lab/bidding/software-copyright.jpg" target="_blank">软著</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-primary">设计方案 <span class="badge">2</span></button>
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    									<span class="caret"></span>
+    									<span class="sr-only">Toggle Dropdown</span>
+  									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="files/lab/scheme/architecture-diagram.png" target="_blank">架构图</a>
+										</li>
+										<li>
+											<a href="files/lab/scheme/topological-graph.png" target="_blank">拓扑图</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var authenticatedusers = ['shendawei', 'rongxinkun', 'suzeyue', 'xiechao', 'dongguangming', 'zhangchao', 'hujiajia', 'taozhongyuan', 'zhoujunxing', 'bianbaolei', 'wangjun2', 'chenyuefei', 'yangjian', 'liulihong', 'liulianpeng', 'yefei', 'luomengyang', 'wuxiuwen', 'cixuefei', 'qianli', 'wuzhenghao', 'zhaoweipeng'];
+		jQuery(function($) {
+			getCurUser();
+			$('.carousel').carousel();
+		});
+
+		function getCurUser() {
+			var username = getQueryString('user');
+			if(null == username) {
+				accessdenied();
+				return;
+			}
+			for(var item in authenticatedusers) {
+				if(username == authenticatedusers[item]) {
+					$('#curuser').text(username);
+					return;
+				}
+			}
+			accessdenied();
+		}
+
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) return unescape(r[2]);
+			return null;
+		}
+
+		function accessdenied() {
+			window.location.href = 'login.html';
+		}
+
+		function logout() {
+			window.location.href = 'index.html';
+		}
+	</script>
+
+</html>
